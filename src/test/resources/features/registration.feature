@@ -1,0 +1,17 @@
+Feature: Registration
+
+  Scenario Outline: Successful registration
+    Given Person wants to sign up in the application
+    When Person sends the required information to sign up
+      | <name> |  | <lastName> |  | <age> |  |  | <email> |  | <country> |
+    Then Person should have a new account created
+    Examples:
+      | name    | lastName   | age | email                | country |
+      | Abraham | Buenrostro | 24  | buencrus06@gmail.com | Mexico  |
+      | Abraham | Cruce      | 23  | buencrus07@gmail.com | Mexico  |
+
+#para formatear ctr+alt+L
+  Scenario: Missing required fields information
+    Given Person wants to sign up in the application
+    When Person does not send the required information
+    Then Person should be told all fields are required
