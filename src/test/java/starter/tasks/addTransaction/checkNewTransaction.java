@@ -11,7 +11,7 @@ public class checkNewTransaction implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Ensure.that(getTransactionInfo.getDescription()).contains("description of transaction"),
+                Ensure.that(getTransactionInfo.getDescription()).contains("description the transaction"),
                 Ensure.that(addTransactionPage.TRANSACTIONS_TABLE)
                         .text().contains("500")
         );
